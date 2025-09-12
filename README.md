@@ -1,3 +1,5 @@
+# ЗАДАНИЕ 1
+```python 
 import pandas as pd
 
 # Загрузка датасета
@@ -104,3 +106,32 @@ for column in ['Booking Status', 'Vehicle Type', 'Payment Method']:
         print(f"\nУникальные значения в столбце '{column}':")
         print(df[column].unique())
         print(f"Количество уникальных значений: {df[column].nunique()}")
+```
+
+# ЗАДАНИЕ 2
+
+```python 
+
+import pandas as pd
+
+# Путь к файлу
+file_path = r'C:\\Users\\student\\Documents\\ncr_ride_bookings.csv'
+
+# Загружаем данные
+data = pd.read_csv(file_path)
+
+#общая статистика
+print("\\n\\nОбщая статистика:")
+print(data.describe(include='all'))
+
+# Количество пропусков в каждом столбце
+print("\\n\\nКоличество пропусков в каждом столбце:")
+print(data.isnull().sum())
+
+# Вывел уникальные значения нужных столбцов
+columns_to_check = ['Booking Status', 'Vehicle Type']
+for column in columns_to_check:
+    values = data[column].unique()
+    print(f"\\n\\nУникальные значения в столбце '{column}' ({len(values)} штук):")
+    print(values)
+```
